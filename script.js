@@ -85,7 +85,7 @@ function marksCondition(bmi) {
             conditionId[indexOfCondition - 1].style.fontWeight = DEFAULT_FONT_WEIGHT;
         }
         
-        conditionId[indexOfCondition].classList.add('marked');
+        conditionId[indexOfCondition].classList.add('table-primary');
         indexOfCondition++;
     }
 }
