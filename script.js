@@ -81,8 +81,8 @@ function marksCondition(bmi) {
 
         // This avoid that more of one condition stay marked
         if (indexOfCondition > 0) {
-            conditionId[indexOfCondition - 1].style.backgroundColor = DEFAULT_BACKGROUND_COLOR;
-            conditionId[indexOfCondition - 1].style.fontWeight = DEFAULT_FONT_WEIGHT;
+            conditionId[indexOfCondition - 1].classList.remove('table-primary');
+            conditionId[indexOfCondition - 1].classList.add('table-light');
         }
         
         conditionId[indexOfCondition].classList.add('table-primary');
