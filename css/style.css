@@ -62,6 +62,18 @@ form {
     background-color: var(--main-color);
 }
 
+#output-wrap {
+    margin-top: 15px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.hide {
+    display: none;
+}
+
 table {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -71,6 +83,11 @@ table {
 th {
     background-color: var(--forthionary-color) !important;
     color: white !important;
+}
+
+.marked {
+    background-color: var(--thirdionary-color) !important;
+    font-weight: bold;
 }
 
 footer {
