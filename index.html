@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Calculadora de IMC</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2 id="subtitle" class="text-center">O que é IMC</h2>
+            <p class="text-justify">IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS (Organização Mundial da Saúde) para classificar padrões de saúde relacionados ao peso, como: desnutrição e obesidade.</p>
+            <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual a sua classificação, de acordo com a OMS.</p>
+            <div id="form-wrap">
+                <form autocomplete="off" class="form-inline">
+                    <div id="weight-input-wrap" class="row">
+                        <div class="col">
+                            <label class="form-label" for="weight-input-id">Peso</label>
+                            <input id="weight-input-id" class="form-control" placeholder="00.00" aria-label="00.00" type="number" step=".1">
+                        </div>
+                        <div id="height-input-wrap" class="col">
+                            <label class="form-label" for="height-input-id">Altura</label>
+                            <input id="height-input-id" class="form-control" placeholder="0.00" aria-label="0.00" type="number" step=".1">
+                        </div>
+                    </div>
+                    <div id="calc-btn-wrap" class="text-center">
+                        <button id="calc-btn" type="button" class="btn btn-primary">Calcular</button>
+                    </div>
+                </form>
+            </div>
+            <div id="output-wrap">
+                <p id="output"></p>
+            </div>
+            <div id="table-wrap">
+                <table class="table table-bordered table-responsive table-hover table-sm">
+                    <thead class="text-center">
+                        <th scope="col">IMC</th>
+                        <th scope="col">Classificação</th>
+                    </thead>
+                    <tbody>
+                        <tr id="underweight">
+                            <td>Abaixo de 18,5</td>
+                            <td>Abaixo do Peso</td>
+                        </tr>
+                        <tr id="ideal-weight">
+                            <td>Entre 18,6 e 24,9</td>
+                            <td>Peso ideal</td>
+                        </tr>
+                        <tr id="overweight">
+                            <td>Entre 25 e 29,9</td>
+                            <td>Acima do Peso</td>
+                        </tr>
+                        <tr id="obesity-grade-i">
+                            <td>Entre 30 e 34,9</td>
+                            <td>Obesidade Grau I</td>
+                        </tr>
+                        <tr id="obesity-grade-ii">
+                            <td>Entre 35 e 39,9</td>
+                            <td>Obesidade Grau II</td>
+                        </tr>
+                        <tr id="morbid-obesity">
+                            <td>Acima de 40</td>
+                            <td>Obesidade Mórbida</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center">
+        <span>Copyright © Gabriel Cavalcante - 2023</span>
+    </footer>
+</body>
+</html>

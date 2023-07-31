@@ -1,0 +1,81 @@
+:root {
+    --text-color: #000;
+    --main-color: #180746;
+    --secondary-color: #4e0172;
+    --thirdionary-color: #ffcd32;
+    --forthionary-color: #72014f;
+    --background-color: #f8f8f8;
+}
+
+body {
+    /* color: var(--text-color); */
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--main-color);
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+#subtitle {
+    padding-top: 25px;
+    margin-bottom: 15px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+#form-wrap {
+    /* border: 1px solid red; */
+    background-color: #fff;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-top: 5px;
+    width: 95%;
+}
+
+#calc-btn-wrap {
+    padding-bottom: 5px;
+}
+
+#calc-btn {
+    margin-top: 15px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+#calc-btn:hover {
+    background-color: var(--main-color);
+}
+
+table {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+}
+
+th {
+    background-color: var(--forthionary-color) !important;
+    color: white !important;
+}
+
+footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    background-color: var(--main-color);
+}
