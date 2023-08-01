@@ -1,29 +1,23 @@
-let indexOfCondition = 0;
-const conditionId = [];
-const calculateBtn = document.getElementById('calc-btn');
+let conditionIndex = 0;
+const conditionIds = [];
+const calculateButton = document.getElementById('calc-btn');
 
-function makesTheFieldsEmpty() {
+function clearInputFields() {
     document.getElementById('weight-input-id').value = '';
     document.getElementById('height-input-id').value = '';
 }
 
-function calculatesBMI() {
-    // Store the values of inputs
+function calculateBMI() {
     let weight = document.getElementById('weight-input-id').value;
     let height = document.getElementById('height-input-id').value;
     
-    // Data validation
-    let validWeight = (weight !== '') && (! isNaN(weight));
-    let validHeight = (height !== '') && (! isNaN(height));
+    let isValidWeight = (weight !== '') && (! isNaN(weight));
+    let isValidHeight = (height !== '') && (! isNaN(height));
     
-    if (validWeight && validHeight) {
+    if (isValidWeight && isValidHeight) {
         let bmi = weight / (height ** 2);
-
-        bmi = bmi.toFixed(2); // Precision of two decimal places
-
-        // Stores the BMI in local storage of user browser or updates the existing value
-        localStorage.setItem('bmi', bmi); // Is not necessary using JSON
-
+        bmi = bmi.toFixed(2);
+        localStorage.setItem('bmi', bmi);
         return bmi;
     }
 
@@ -32,24 +26,21 @@ function calculatesBMI() {
     return NaN;
 }
 
-function showsBMI(bmi) {
+function displayBMI(bmi) {
     if (! isNaN(bmi)) {
         const outputWrap = document.getElementById('output-wrap');
-        const output = document.getElementById('output');
+        const outputElement = document.getElementById('output');
 
         if (outputWrap.classList.contains('hide')) {
             outputWrap.classList.remove('hide');
         }
 
-        output.innerHTML = `Seu IMC: <strong>${bmi}</strong>`;
+        outputElement.innerHTML = `Seu IMC: <strong>${bmi}</strong>`;
     }
 }
 
-function marksCondition(bmi) {
-    let conditionsIdIndex;
-    const DEFAULT_FONT_WEIGHT = 'normal';
-    const DEFAULT_BACKGROUND_COLOR = '#fff';
-    const conditionsId = ['underweight', 'ideal-weight', 'overweight', 'obesity-grade-i', 'obesity-grade-ii', 'morbid-obesity'];
+function getBMICondition(bmi) {
+    const conditionIds = ['underweight', 'ideal-weight', 'overweight', 'obesity-grade-i', 'obesity-grade-ii', 'morbid-obesity'];
 
     // RATES
     /*
@@ -61,48 +52,54 @@ function marksCondition(bmi) {
         Morbid obesity:   40 and so on
     */
 
-    if (! isNaN(bmi)) {
-        if (bmi < 18.5) {
-            conditionsIdIndex = 0;
-        } else if (bmi <= 24.99) {
-            conditionsIdIndex = 1;
-        } else if (bmi <= 29.99) {
-            conditionsIdIndex = 2;
-        } else if (bmi <= 34.99) {
-            conditionsIdIndex = 3;
-        } else if (bmi <= 39.99) {
-            conditionsIdIndex = 4;
-        } else { // 40 and so on
-            conditionsIdIndex = 5;
-        }
-                
-        // Note that "conditionId" (singular) is different of "conditionsId" (plural)
-        conditionId.push(document.getElementById(conditionsId[conditionsIdIndex]));
+    if (bmi < 18.5) {
+        return conditionIds[0];
+    } else if (bmi <= 24.99) {
+        return conditionIds[1];
+    } else if (bmi <= 29.99) {
+        return conditionIds[2];
+    } else if (bmi <= 34.99) {
+        return conditionIds[3];
+    } else if (bmi <= 39.99) {
+        return conditionIds[4];
+    } else { // 40 and so on
+        return conditionIds[5];
+    }
 
-        // This avoid that more of one condition stay marked
-        if (indexOfCondition > 0) {
-            conditionId[indexOfCondition - 1].classList.remove('table-primary');
-            conditionId[indexOfCondition - 1].classList.add('table-light');
+    return null;
+}
+
+function markBMICondition(bmi) {
+    let conditionId;
+
+    if (! isNaN(bmi)) {
+        conditionId = getBMICondition(bmi);
+                
+        conditionIds.push(document.getElementById(conditionId));
+
+        if (conditionIndex > 0) {
+            conditionIds[conditionIndex - 1].classList.remove('table-primary');
         }
         
-        conditionId[indexOfCondition].classList.add('table-primary');
-        indexOfCondition++;
+        conditionIds[conditionIndex].classList.add('table-primary');
+        conditionIndex++;
     }
 }
 
-calculateBtn.addEventListener('click', function() {
-    let bmi = calculatesBMI();
+calculateButton.addEventListener('click', function() {
+    let bmi = calculateBMI();
 
-    makesTheFieldsEmpty();
-    showsBMI(bmi);
-    marksCondition(bmi);
+    clearInputFields();
+    displayBMI(bmi);
+
+    markBMICondition(bmi);
 });
 
 window.addEventListener('load', function() {
-    if (localStorage.getItem('bmi') !== null) { // If there is BMI stored
-        let bmi = localStorage.getItem('bmi'); // Gets the value of BMI stored in local storage of user browser
+    if (localStorage.getItem('bmi') !== null) {
+        let bmi = localStorage.getItem('bmi');
 
-        showsBMI(bmi);
-        marksCondition(bmi);
+        displayBMI(bmi);
+        markBMICondition(bmi);
     }
 });
