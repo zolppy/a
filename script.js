@@ -46,6 +46,7 @@ function showsBMI(bmi) {
 }
 
 function marksCondition(bmi) {
+    location.reload();
     let conditionsIdIndex;
     const DEFAULT_FONT_WEIGHT = 'normal';
     const DEFAULT_BACKGROUND_COLOR = '#fff';
