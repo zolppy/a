@@ -1,5 +1,8 @@
+// For avoiding that more of one condition on table stays marked
 let conditionIndex = 0;
 const conditionIds = [];
+
+// For activating event
 const calculateButton = document.getElementById('calc-btn');
 
 function clearInputFields() {
@@ -7,26 +10,40 @@ function clearInputFields() {
     document.getElementById('height-input-id').value = '';
 }
 
+// Data validation
+function isValidData(weight, height) {
+    if (weight == '' && height != '') {
+        alert('Preencha o campo para peso.');
+    } else if (weight != '' && height == '') {
+        alert('Preencha o campo para altura.');
+    } else if (weight == '' && height == '') {
+        alert('Preencha os campos para peso e altura.');
+    } else { // Both aren't empty
+        return true;
+    }
+
+    return false;
+}
+
 function calculateBMI() {
     let weight = document.getElementById('weight-input-id').value;
     let height = document.getElementById('height-input-id').value;
-    
-    let isValidWeight = (weight !== '') && (! isNaN(weight));
-    let isValidHeight = (height !== '') && (! isNaN(height));
-    
-    if (isValidWeight && isValidHeight) {
+
+    if (isValidData(weight, height)) {
         let bmi = weight / (height ** 2);
-        bmi = bmi.toFixed(2);
-        localStorage.setItem('bmi', bmi);
+        bmi = bmi.toFixed(2);  // Convert for two decimal places
+        // Store bmi in web browser's local storage
+        localStorage.setItem('bmi', bmi); // Isn't necessary using JSON
         return bmi;
     }
-
-    alert('Valor(es) inválido(s)!');
 
     return NaN;
 }
 
-function displayBMI(bmi) {
+function displayBMI() {
+    // Get bmi of web browser's local storage
+    let bmi = localStorage.getItem('bmi');
+
     if (! isNaN(bmi)) {
         const outputWrap = document.getElementById('output-wrap');
         const outputElement = document.getElementById('output');
@@ -39,44 +56,40 @@ function displayBMI(bmi) {
     }
 }
 
-function getBMICondition(bmi) {
-    const conditionIds = ['underweight', 'ideal-weight', 'overweight', 'obesity-grade-i', 'obesity-grade-ii', 'morbid-obesity'];
+function getBMICondition() {
+    // Get bmi as string may cause problems
+    let bmi = parseFloat(localStorage.getItem('bmi'));
 
-    // RATES
-    /*
-        Underweight:      0 to 18.49
-        Ideal weight:     18.5 to 24.99
-        Overweight:       25 to 29.99
-        Obesity grade I:  30 to 34.99
-        Obesity grade II: 35 to 39.99
-        Morbid obesity:   40 and so on
-    */
-
+    // 0 to 18.49
     if (bmi < 18.5) {
-        return conditionIds[0];
+        return 'underweight';
+    // 18.5 to 24.99
     } else if (bmi <= 24.99) {
-        return conditionIds[1];
+        return 'ideal-weight';
+    // 25 to 29.99
     } else if (bmi <= 29.99) {
-        return conditionIds[2];
+        return 'overweight';
+    // 30 to 34.99
     } else if (bmi <= 34.99) {
-        return conditionIds[3];
+        return 'obesity-grade-i';
+    // 35 to 39.99
     } else if (bmi <= 39.99) {
-        return conditionIds[4];
-    } else { // 40 and so on
-        return conditionIds[5];
+        return 'obesity-grade-ii';
+    // 40 or more
+    } else {
+        return 'morbid-obesity';
     }
-
-    return null;
 }
 
-function markBMICondition(bmi) {
-    let conditionId;
+function markBMICondition() {
+    let bmi = localStorage.getItem('bmi');
 
     if (! isNaN(bmi)) {
-        conditionId = getBMICondition(bmi);
-                
+        let conditionId = getBMICondition();
         conditionIds.push(document.getElementById(conditionId));
 
+        // For avoiding that more of one condition on table stays marked
+        // Might to exists a better way to make this
         if (conditionIndex > 0) {
             conditionIds[conditionIndex - 1].classList.remove('table-primary');
         }
@@ -87,19 +100,16 @@ function markBMICondition(bmi) {
 }
 
 calculateButton.addEventListener('click', function() {
-    let bmi = calculateBMI();
-
+    calculateBMI();
     clearInputFields();
-    displayBMI(bmi);
-
-    markBMICondition(bmi);
+    displayBMI();
+    markBMICondition();
 });
 
+// This event is activated when the page is fully loaded
 window.addEventListener('load', function() {
     if (localStorage.getItem('bmi') !== null) {
-        let bmi = localStorage.getItem('bmi');
-
-        displayBMI(bmi);
-        markBMICondition(bmi);
+        displayBMI();
+        markBMICondition();
     }
 });
