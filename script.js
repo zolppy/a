@@ -60,8 +60,8 @@ function getBMICondition() {
     // Get bmi as string may cause problems
     let bmi = parseFloat(localStorage.getItem('bmi'));
 
-    // 0 to 18.49
-    if (bmi < 18.5) {
+    // 0 to 18.59
+    if (bmi <= 18.59) {
         return 'underweight';
     // 18.5 to 24.99
     } else if (bmi <= 24.99) {
@@ -92,9 +92,11 @@ function markBMICondition() {
         // Might to exists a better way to make this
         if (conditionIndex > 0) {
             conditionIds[conditionIndex - 1].classList.remove('table-primary');
+            conditionIds[conditionIndex - 1].classList.remove('fw-bold');
         }
         
         conditionIds[conditionIndex].classList.add('table-primary');
+        conditionIds[conditionIndex].classList.add('fw-bold');
         conditionIndex++;
     }
 }

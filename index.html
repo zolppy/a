@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Calculadora de IMC</title>
 </head>
 <body>
-    <header>
-        <h1 class="text-center">Calculadora de IMC</h1>
+    <header class="text-center bg-gradient pt-3 pb-3">
+        <h1 class="fs-1 fw-bold">Calculadora de IMC</h1>
     </header>
     <main>
         <div class="container">
-            <h2 id="subtitle" class="text-center">O que é IMC</h2>
+            <h2 id="subtitle" class="text-center pt-4 mb-3 fs-2">O que é IMC</h2>
             <p class="text-justify">IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS (Organização Mundial da Saúde) para classificar padrões de saúde relacionados ao peso, como: desnutrição e obesidade.</p>
             <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual a sua classificação, de acordo com a OMS.</p>
-            <div id="form-wrap">
-                <form autocomplete="off" class="form-inline">
+            <div id="form-wrap" class="d-flex justify-content-center">
+                <form class="mt-2">
                     <div id="weight-input-wrap" class="row">
                         <div class="col">
                             <label class="form-label" for="weight-input-id">Peso</label>
@@ -31,16 +31,16 @@
                             <input id="height-input-id" class="form-control" placeholder="Informe sua altura" aria-label="Informe sua altura" type="number" step=".1">
                         </div>
                     </div>
-                    <div id="calc-btn-wrap" class="text-center">
-                        <button id="calc-btn" type="button" class="btn btn-primary">Calcular</button>
+                    <div class="mb-2">
+                        <button id="calc-btn" type="button" class="btn btn-primary w-100 mt-2">Calcular</button>
                     </div>
                 </form>
             </div>
-            <div id="output-wrap" class="hide text-center">
+            <div id="output-wrap" class="hide text-center pt-2 pb-2 mt-3">
                 <span id="output"></span>
             </div>
             <div id="table-wrap">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover mt-4 mb-3">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">IMC</th>
@@ -77,8 +77,8 @@
             </div>
         </div>
     </main>
-    <footer class="text-center">
-        <span>Copyright &copy; Gabriel Cavalcante - 2023</span>
+    <footer class="text-center pt-2 pb-2 bg-gradient">
+        <span class="fw-bold">Copyright &copy; Gabriel Cavalcante - 2023</span>
     </footer>
 </body>
 </html>
