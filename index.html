@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Calculadora de IMC</title>
 </head>
 <body>
-    <header class="text-center bg-gradient pt-3 pb-3">
+    <header class="text-center py-3 text-white bg-gradient bg-primary">
         <h1 class="fs-1 fw-bold">Calculadora de IMC</h1>
     </header>
     <main>
         <div class="container">
-            <h2 id="subtitle" class="text-center pt-4 mb-3 fs-2">O que é IMC</h2>
+            <h2 class="text-center pt-4 mb-3 fs-2">O que é IMC</h2>
             <p class="text-justify">IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS (Organização Mundial da Saúde) para classificar padrões de saúde relacionados ao peso, como: desnutrição e obesidade.</p>
             <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual a sua classificação, de acordo com a OMS.</p>
             <div id="form-wrap" class="d-flex justify-content-center">
@@ -32,11 +32,11 @@
                         </div>
                     </div>
                     <div class="mb-2">
-                        <button id="calc-btn" type="button" class="btn btn-primary w-100 mt-2">Calcular</button>
+                        <button id="calc-btn" type="button" class="btn btn-success w-100 mt-2">Calcular</button>
                     </div>
                 </form>
             </div>
-            <div id="output-wrap" class="hide text-center pt-2 pb-2 mt-3">
+            <div id="output-wrap" class="hide text-center py-2 mt-3">
                 <span id="output"></span>
             </div>
             <div id="table-wrap">
@@ -77,8 +77,8 @@
             </div>
         </div>
     </main>
-    <footer class="text-center pt-2 pb-2 bg-gradient">
-        <span class="fw-bold">Copyright &copy; Gabriel Cavalcante - 2023</span>
+    <footer class="text-center bg-gradient py-2 text-white bg-secondary">
+        <span class="fw-bold">Copyright &copy; 2023 | Gabriel Cavalcante</span>
     </footer>
 </body>
 </html>

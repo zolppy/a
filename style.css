@@ -1,11 +1,7 @@
 @charset "UTF-8";
 
-header {
-    background-color: indigo;
-    color: white;
-}
-
-#form-wrap {
+#form-wrap,
+#output-wrap {
     background-color: white;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
@@ -15,19 +11,8 @@ form {
     width: 95%;
 }
 
-#output-wrap {
-    background-color: white;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
-    border-radius: 10px;
-}
-
 table {
     box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
-}
-
-footer {
-    background-color: indigo;
-    color: white;
 }
 
 .text-justify {
