@@ -3,16 +3,17 @@
 #form-wrap,
 #output-wrap {
     background-color: white;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
     border-radius: 10px;
+}
+
+#form-wrap,
+#output-wrap,
+table {
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
 }
 
 form {
     width: 95%;
-}
-
-table {
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
 }
 
 .text-justify {

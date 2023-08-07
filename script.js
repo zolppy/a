@@ -84,6 +84,7 @@ function markBMICondition() {
         const row = document.getElementById(getBMICondition());
         const tableRows = document.querySelectorAll('.table-row');
 
+        // Remove table rows highlight for add in a specific row
         tableRows.forEach(row => {
             row.classList.remove('table-primary', 'fw-bold');
         });
