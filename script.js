@@ -1,7 +1,3 @@
-// For avoiding that more of one condition on table stays marked
-let conditionIndex = 0;
-const conditionIds = [];
-
 // For activating event
 const calculateButton = document.getElementById('calc-btn');
 
@@ -85,19 +81,14 @@ function markBMICondition() {
     let bmi = localStorage.getItem('bmi');
 
     if (! isNaN(bmi)) {
-        let conditionId = getBMICondition();
-        conditionIds.push(document.getElementById(conditionId));
+        const row = document.getElementById(getBMICondition());
+        const tableRows = document.querySelectorAll('.table-row');
 
-        // For avoiding that more of one condition on table stays marked
-        // Might to exists a better way to make this
-        if (conditionIndex > 0) {
-            conditionIds[conditionIndex - 1].classList.remove('table-primary');
-            conditionIds[conditionIndex - 1].classList.remove('fw-bold');
-        }
-        
-        conditionIds[conditionIndex].classList.add('table-primary');
-        conditionIds[conditionIndex].classList.add('fw-bold');
-        conditionIndex++;
+        tableRows.forEach(row => {
+            row.classList.remove('table-primary', 'fw-bold');
+        });
+
+        row.classList.add('table-primary', 'fw-bold');
     }
 }
 
