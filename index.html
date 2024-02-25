@@ -9,14 +9,28 @@
   <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 class="main-title bold text-center">Calculdora de IMC</h1>
-    </header>
-    <main></main>
-    <footer>
-      <span class="copyright text-center">Copyright &copy; 2024 | Gabriel Cavalcante</span>
-    </footer>
-  </div>
+  <header>
+    <h1 class="main-title bold text-center">Calculdora de IMC</h1>
+  </header>
+  <main class="container">
+    <section class="explanation">
+      <h2 class="explanation-title bold text-center">O que é IMC</h2>
+      <p class="text-justify">IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS (Organização Mundial de Saúde) para classificar padrões de saúde relacionados ao peso, como: desnutrição e obesidade.</p>
+      <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual sua classificação, de acordo com a OMS.</p>
+    </section>
+    <section class="data">
+      <div class="input-wrapper">
+        <label for="weight">Peso</label>
+        <input type="number" id="weight" />
+      </div>
+      <div class="input-wrapper">
+        <label for="height">Altura</label>
+        <input type="number" id="height" />
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span class="copyright text-center">Copyright &copy; 2024 | Gabriel Cavalcante</span>
+  </footer>
 </body>
 </html>

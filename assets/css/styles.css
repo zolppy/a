@@ -11,6 +11,24 @@ header {
   font-size: 2rem;
 }
 
+.container {
+  padding: 0 .5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.explanation {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.explanation-title {
+  font-size: 1.5rem;
+}
+
 footer {
   background-color: #717a82;
   padding: 1em;
