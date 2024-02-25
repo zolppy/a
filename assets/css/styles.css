@@ -1,5 +1,6 @@
 @import url("./base.css");
 @import url("./generics.css");
+@import url("./state.css");
 
 .container {
   margin: 0 auto;
@@ -78,8 +79,14 @@ main {
 }
 
 .categories-table td, th {
-  border: 1px solid rgba(0, 0, 0, .4);
-  padding: .5em;
+  border: 1px solid rgba(0, 0, 0, .2);
+  padding: .6em;
+}
+
+.categories-table th {
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
 }
 
 footer {

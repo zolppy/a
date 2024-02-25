@@ -7,6 +7,10 @@
   text-align: center !important;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .text-justify {
   text-align: justify !important;
 }

@@ -1,0 +1,8 @@
+.is-hidden {
+  display: none;
+}
+
+.is-tr-active {
+  background-color: #cfe2ff;
+  font-weight: bold;
+}
