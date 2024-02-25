@@ -10,3 +10,15 @@ header {
   color: white;
   font-size: 2rem;
 }
+
+footer {
+  background-color: #717a82;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright {
+  color: white;
+}
