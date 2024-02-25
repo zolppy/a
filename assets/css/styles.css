@@ -1,0 +1,12 @@
+@import url("./base.css");
+@import url("./generics.css");
+
+header {
+  background-color: #1d77fd;
+  padding: 1em;
+}
+
+.main-title {
+  color: white;
+  font-size: 2rem;
+}
