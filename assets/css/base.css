@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: black;
   color: black;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -19,9 +19,6 @@ body {
   font-weight: normal;
   letter-spacing: normal;
   line-height: normal;
-  max-width: 480px;
-  min-height: 100svh;
-  min-width: 320px;
 }
 
 a {
