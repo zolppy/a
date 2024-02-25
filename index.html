@@ -19,15 +19,29 @@
       <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual sua classificação, de acordo com a OMS.</p>
     </section>
     <section class="data">
-      <div class="input-wrapper">
-        <label for="weight">Peso</label>
-        <input type="number" id="weight" />
+      <div class="inputs">
+        <div class="input-wrapper">
+          <label for="weight" class="bold">Peso</label>
+          <input
+            type="number"
+            id="weight"
+            placeholder="Informe seu peso"
+            class="data-input"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="height" class="bold">Altura</label>
+          <input
+            type="number"
+            id="height"
+            placeholder="Informe sua altura"
+            class="data-input"
+          />
+        </div>
       </div>
-      <div class="input-wrapper">
-        <label for="height">Altura</label>
-        <input type="number" id="height" />
-      </div>
+      <button type="button" class="calculate-btn">Calcular</button>
     </section>
+    <section class="categories"></section>
   </main>
   <footer>
     <span class="copyright text-center">Copyright &copy; 2024 | Gabriel Cavalcante</span>
