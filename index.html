@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de IMC</title>
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <script defer src="assets/js/main.js"></script>
-</head>
-<body>
-  <header class="container">
-    <h1 class="main-title bold text-center">Calculdora de IMC</h1>
-  </header>
-  <main class="container">
-    <section class="explanation">
-      <h2 class="explanation-title bold text-center">O que é IMC</h2>
-      <p class="text-justify">IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS (Organização Mundial de Saúde) para classificar padrões de saúde relacionados ao peso, como: desnutrição e obesidade.</p>
-      <p class="text-justify">Abaixo você poderá calcular seu IMC e ver qual sua classificação, de acordo com a OMS.</p>
-    </section>
-    <section class="data">
-      <div class="inputs">
-        <div class="input-wrapper">
-          <label for="weight" class="bold">Peso</label>
-          <input
-            type="number"
-            id="weight"
-            placeholder="Informe seu peso"
-            class="data-input weight-input"
-            step=".1"
-          />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de IMC</title>
+    <link rel="shortcut icon" href="dist/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="dist/css/style.min.css" />
+    <script defer src="dist/js/script.min.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <h1 class="main-title bold text-center">Calculdora de IMC</h1>
+    </header>
+    <main class="container">
+      <section class="explanation">
+        <h2 class="explanation-title bold text-center">O que é IMC</h2>
+        <p class="text-justify">
+          IMC (Índice de Massa Corporal) é um cálculo universal adotado pela OMS
+          (Organização Mundial de Saúde) para classificar padrões de saúde
+          relacionados ao peso, como: desnutrição e obesidade.
+        </p>
+        <p class="text-justify">
+          Abaixo você poderá calcular seu IMC e ver qual sua classificação, de
+          acordo com a OMS.
+        </p>
+      </section>
+      <section class="data">
+        <div class="inputs">
+          <div class="input-wrapper">
+            <label for="weight" class="bold">Peso</label>
+            <input
+              type="number"
+              id="weight"
+              placeholder="Informe seu peso"
+              class="data-input weight-input"
+              step=".1"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="height" class="bold">Altura</label>
+            <input
+              type="number"
+              id="height"
+              placeholder="Informe sua altura"
+              class="data-input height-input"
+              step=".1"
+            />
+          </div>
         </div>
-        <div class="input-wrapper">
-          <label for="height" class="bold">Altura</label>
-          <input
-            type="number"
-            id="height"
-            placeholder="Informe sua altura"
-            class="data-input height-input"
-            step=".1"
-          />
-        </div>
-      </div>
-      <button type="button" class="calculate-btn">Calcular</button>
-    </section>
-    <section class="bmi-result is-hidden">
-      <span class="text-center">Seu IMC: <span class="bmi-value bold"></span></span>
-    </section>
-    <section class="categories">
-      <table class="categories-table">
-        <thead>
-          <th class="text-left">IMC</th>
-          <th class="text-left">Classificação</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Abaixo de 18,5</td>
-            <td>Abaixo do Peso</td>
-          </tr>
-          <tr>
-            <td>Entre 18,6 e 24,9</td>
-            <td>Peso Ideal</td>
-          </tr>
-          <tr>
-            <td>Entre 25 e 29,9</td>
-            <td>Obesidade Grau I</td>
-          </tr>
-          <tr>
-            <td>Entre 30 e 34,9</td>
-            <td>Obesidade Grau II</td>
-          </tr>
-          <tr>
-            <td>Entre 35 e 39,9</td>
-            <td>Obesidade Grau III</td>
-          </tr>
-          <tr>
-            <td>Acima de 40</td>
-            <td>Obesidade Mórbida</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-  <footer class="container">
-    <span class="copyright text-center">Copyright &copy; 2023 | Gabriel Cavalcante</span>
-  </footer>
-</body>
+        <button type="button" class="calculate-btn">Calcular</button>
+      </section>
+      <section class="bmi-result is-hidden">
+        <span class="text-center"
+          >Seu IMC: <span class="bmi-value bold"></span
+        ></span>
+      </section>
+      <section class="categories">
+        <table class="categories-table">
+          <thead>
+            <th class="text-left">IMC</th>
+            <th class="text-left">Classificação</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abaixo de 18,5</td>
+              <td>Abaixo do Peso</td>
+            </tr>
+            <tr>
+              <td>Entre 18,6 e 24,9</td>
+              <td>Peso Ideal</td>
+            </tr>
+            <tr>
+              <td>Entre 25 e 29,9</td>
+              <td>Obesidade Grau I</td>
+            </tr>
+            <tr>
+              <td>Entre 30 e 34,9</td>
+              <td>Obesidade Grau II</td>
+            </tr>
+            <tr>
+              <td>Entre 35 e 39,9</td>
+              <td>Obesidade Grau III</td>
+            </tr>
+            <tr>
+              <td>Acima de 40</td>
+              <td>Obesidade Mórbida</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="container">
+      <span class="copyright text-center"
+        >Copyright &copy; 2023 | Gabriel Cavalcante</span
+      >
+    </footer>
+  </body>
 </html>
