@@ -1,0 +1,34 @@
+{
+  "name": "imc",
+  "version": "1.0.0",
+  "description": "Links para minhas redes sociais, GitHub, currículo e afins.",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rm dist/css/*; rm dist/js/*",
+    "w-ts": "tsc --strict -w --removeComments --sourceMap src/ts/script.ts --outDir dist/js/",
+    "w-sass": "sass -w src/sass/style.scss dist/css/style.css",
+    "t-ts": "tsc --strict --removeComments --sourceMap src/ts/script.ts --outDir dist/js/",
+    "t-sass": "sass src/sass/style.scss dist/css/style.css",
+    "m-js": "uglifyjs dist/js/script.js -o dist/js/script.min.js",
+    "m-css": "uglifycss dist/css/style.css > dist/css/style.min.css",
+    "tm-style": "npm run t-sass; npm run m-css",
+    "tm-script": "npm run t-ts; npm run m-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zolppy/imc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zolppy/imc/issues"
+  },
+  "homepage": "https://github.com/zolppy/imc#readme",
+  "devDependencies": {
+    "sass": "^1.77.4",
+    "typescript": "^5.4.5",
+    "uglify-js": "^3.18.0",
+    "uglifycss": "^0.0.29"
+  }
+}
